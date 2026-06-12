@@ -81,7 +81,32 @@ export default async function handler(req: any, res: any) {
   }
 
   if (body.product === 'kit') {
-    return res.status(501).json({ ok: false, error: 'Acesso ao kit ainda não implementado.' });
+    const kitUrl = process.env.KIT_ACCESS_URL;
+    const kitPassword = process.env.KIT_ACCESS_PASSWORD;
+
+    if (!kitUrl) {
+      console.error('Missing KIT_ACCESS_URL');
+      return res.status(500).json({ ok: false, error: 'Internal server error' });
+    }
+
+    if (!kitPassword) {
+      console.error('Missing KIT_ACCESS_PASSWORD');
+      return res.status(500).json({ ok: false, error: 'Internal server error' });
+    }
+
+    const usageResult = await incrementUsage(supabase, body.token, body.product, data.used_count);
+
+    if (!usageResult.ok) {
+      return res.status(500).json({ ok: false, error: 'Internal server error' });
+    }
+
+    return res.status(200).json({
+      ok: true,
+      product: 'kit',
+      kit_url: kitUrl,
+      kit_password: kitPassword,
+      remaining_uses: Math.max(data.max_uses - usageResult.nextUsedCount, 0),
+    });
   }
 
   const storageBucket = process.env.SUPABASE_STORAGE_BUCKET;
@@ -106,19 +131,9 @@ export default async function handler(req: any, res: any) {
     return res.status(500).json({ ok: false, error: 'Internal server error' });
   }
 
-  const nextUsedCount = data.used_count + 1;
-  const lastUsedAt = new Date().toISOString();
-  const { error: updateError } = await supabase
-    .from('access_tokens')
-    .update({
-      used_count: nextUsedCount,
-      last_used_at: lastUsedAt,
-    })
-    .eq('token', body.token)
-    .eq('product', body.product);
+  const usageResult = await incrementUsage(supabase, body.token, body.product, data.used_count);
 
-  if (updateError) {
-    console.error('Supabase usage update error', updateError);
+  if (!usageResult.ok) {
     return res.status(500).json({ ok: false, error: 'Internal server error' });
   }
 
@@ -127,8 +142,28 @@ export default async function handler(req: any, res: any) {
     product: 'ebook',
     download_url: signedUrlData.signedUrl,
     expires_in_minutes: SIGNED_URL_TTL_MINUTES,
-    remaining_uses: Math.max(data.max_uses - nextUsedCount, 0),
+    remaining_uses: Math.max(data.max_uses - usageResult.nextUsedCount, 0),
   });
+}
+
+async function incrementUsage(supabase: any, token: string, product: AccessProduct, usedCount: number) {
+  const nextUsedCount = usedCount + 1;
+  const lastUsedAt = new Date().toISOString();
+  const { error: updateError } = await supabase
+    .from('access_tokens')
+    .update({
+      used_count: nextUsedCount,
+      last_used_at: lastUsedAt,
+    })
+    .eq('token', token)
+    .eq('product', product);
+
+  if (updateError) {
+    console.error('Supabase usage update error', updateError);
+    return { ok: false as const };
+  }
+
+  return { ok: true as const, nextUsedCount };
 }
 
 async function readBody(req: any): Promise<ValidateAccessBody> {
