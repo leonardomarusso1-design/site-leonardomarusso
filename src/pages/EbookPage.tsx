@@ -1,4 +1,5 @@
 import { AlertTriangle, ArrowRight, Check, CheckCircle2, FileText, Lightbulb, MessageCircle, Sparkles, Target } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { links } from '../data/links';
@@ -221,7 +222,7 @@ export function EbookPage() {
   );
 }
 
-function PromiseCard({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) {
+function PromiseCard({ icon, title, text }: { icon: ReactNode; title: string; text: string }) {
   return (
     <article className="bg-brand-card border border-brand-border rounded-2xl p-6">
       <div className="w-12 h-12 rounded-xl bg-brand-bg border border-brand-border flex items-center justify-center mb-6 text-brand-accent">
