@@ -9,7 +9,8 @@ export function Header() {
   const navLinks = [
     { label: 'Início', href: '#inicio' },
     { label: 'Ecossistema', href: '#ecossistema' },
-    { label: 'Ferramentas', href: '#ferramentas' },
+    { label: 'Projetos', href: '#projetos' },
+    { label: 'Provas', href: '#provas' },
   ];
 
   return (

@@ -1,67 +1,45 @@
 export function PathSection() {
   const steps = [
     {
-      number: "01",
-      title: "Entenda o que vender",
-      description: "Comece com uma oferta simples que alguém consiga entender rápido."
+      number: '01',
+      title: 'Entre na comunidade',
+      description: 'Acompanhe os bastidores, materiais e atualizações.',
     },
     {
-      number: "02",
-      title: "Monte sua primeira oferta",
-      description: "Transforme uma ideia solta em algo claro, com público, problema, solução e próximo passo."
+      number: '02',
+      title: 'Use o ebook e o kit',
+      description: 'Entenda o caminho e aplique com os modelos prontos.',
     },
     {
-      number: "03",
-      title: "Use o Kit",
-      description: "Aplique modelos, prompts e scripts para acelerar a execução."
+      number: '03',
+      title: 'Aprenda os serviços',
+      description: 'Plaquinhas, fotos com IA, biosites e ofertas simples para negócios locais.',
     },
     {
-      number: "04",
-      title: "Entre na comunidade",
-      description: "Receba bastidores, atualizações, aulas e acesso mais barato às ferramentas."
+      number: '04',
+      title: 'Evolua para as ferramentas',
+      description: 'Use os apps e SaaS que estão sendo construídos para acelerar a execução.',
     },
-    {
-      number: "05",
-      title: "Use as ferramentas",
-      description: "Acesse apps e recursos criados para facilitar a entrega dos serviços."
-    },
-    {
-      number: "06",
-      title: "Venda serviços reais",
-      description: "Aplique no WhatsApp, Instagram, negócios locais e internet."
-    }
   ];
 
   return (
-    <section className="py-24 px-6 relative">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Comece pelo caminho certo</h2>
-          <p className="text-brand-muted text-lg">
-            Um passo a passo lógico para não se perder na quantidade de informações.
-          </p>
+    <section id="caminho" className="py-20 md:py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Como entrar no ecossistema</h2>
         </div>
 
-        <div className="relative">
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-brand-border -translate-x-1/2"></div>
-
-          <div className="space-y-12 md:space-y-0">
-            {steps.map((step, index) => (
-              <div key={index} className={`relative flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} md:mb-12`}>
-                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-brand-bg border border-brand-accent rounded-full items-center justify-center z-10 shadow-[0_0_15px_rgba(245,197,66,0.2)]">
-                  <span className="text-brand-accent text-sm font-bold">{step.number}</span>
-                </div>
-
-                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16'}`}>
-                  <div className="bg-brand-card p-8 rounded-3xl border border-brand-border">
-                    <div className="md:hidden text-brand-accent font-bold mb-2">{step.number}</div>
-                    <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                    <p className="text-brand-muted">{step.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="bg-brand-card p-6 md:p-8 rounded-2xl border border-brand-border relative"
+            >
+              <span className="text-brand-accent text-sm font-bold mb-4 block">{step.number}</span>
+              <h3 className="text-lg font-bold mb-2">{step.title}</h3>
+              <p className="text-brand-muted text-sm leading-relaxed">{step.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

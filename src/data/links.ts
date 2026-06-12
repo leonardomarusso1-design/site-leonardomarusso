@@ -5,5 +5,7 @@ export const links = {
   youtubeUrl: "#",
   instagramUrl: "#",
   photosAppUrl: "#",
+  biositeUrl: "#",
+  contactUrl: "#",
   toqyUrl: "https://toqy.com.br"
 };
