@@ -57,7 +57,7 @@ export default async function handler(req: any, res: any) {
     customer_email: body.customer_email,
     customer_name: body.customer_name ?? null,
     status: 'active',
-    max_uses: 3,
+    max_uses: 10,
     used_count: 0,
     expires_at: expiresAt,
   });
