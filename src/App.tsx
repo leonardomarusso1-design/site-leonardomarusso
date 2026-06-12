@@ -2,6 +2,7 @@ import { HomePage } from './pages/HomePage';
 import { EbookPage } from './pages/EbookPage';
 import { EbookAccessPage } from './pages/EbookAccessPage';
 import { EbookThankYouPage } from './pages/EbookThankYouPage';
+import { KitPage } from './pages/KitPage';
 import { KitAccessPage } from './pages/KitAccessPage';
 import { KitThankYouPage } from './pages/KitThankYouPage';
 
@@ -10,6 +11,10 @@ function resolvePage() {
 
   if (path === '/ebook') {
     return <EbookPage />;
+  }
+
+  if (path === '/kit') {
+    return <KitPage />;
   }
 
   if (path === '/acesso-ebook') {
