@@ -5,7 +5,7 @@ export function EcosystemCards() {
     {
       icon: <Users className="text-brand-accent" size={32} />,
       title: "Comunidade do Léo",
-      description: "Bastidores, aulas, prompts, atualizações e acompanhamento prático para colocar sua ideia no ar."
+      description: "Bastidores, aulas, prompts, atualizações e acompanhamento prático para sair da teoria."
     },
     {
       icon: <Book className="text-brand-accent" size={32} />,
@@ -39,9 +39,9 @@ export function EcosystemCards() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">O que você encontra aqui</h2>
-          <p className="text-brand-muted max-w-2xl mx-auto text-lg">
-            Um ecossistema criado para quem prefere execução real. Recursos para quem quer 
-            vender serviços pela internet de forma simples.
+          <p className="text-brand-muted max-w-3xl mx-auto text-lg leading-relaxed">
+            Não é só um curso. É um ecossistema em construção.
+            Aqui você encontra materiais para começar, uma comunidade para acompanhar os bastidores e ferramentas criadas para facilitar a execução.
           </p>
         </div>
 

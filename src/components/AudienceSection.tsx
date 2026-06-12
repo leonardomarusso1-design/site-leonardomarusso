@@ -21,8 +21,6 @@ export function AudienceSection() {
     <section className="py-24 px-6 border-b border-brand-border/50">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-          
-          {/* Para quem é */}
           <div className="bg-brand-card/50 p-8 md:p-12 rounded-[2rem] border border-brand-border">
             <h2 className="text-2xl font-bold mb-8">Para quem é</h2>
             <ul className="space-y-5">
@@ -37,7 +35,6 @@ export function AudienceSection() {
             </ul>
           </div>
 
-          {/* Para quem não é */}
           <div className="bg-brand-bg p-8 md:p-12 rounded-[2rem] border border-brand-border/30 grayscale">
             <h2 className="text-2xl font-bold mb-8 text-brand-text/80">Para quem não é</h2>
             <ul className="space-y-5">
@@ -51,7 +48,6 @@ export function AudienceSection() {
               ))}
             </ul>
           </div>
-
         </div>
       </div>
     </section>

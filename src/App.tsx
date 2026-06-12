@@ -1,8 +1,10 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { PracticalBuildsSection } from './components/PracticalBuildsSection';
 import { EcosystemCards } from './components/EcosystemCards';
 import { PathSection } from './components/PathSection';
 import { AboutSection } from './components/AboutSection';
+import { ProofSection } from './components/ProofSection';
 import { AudienceSection } from './components/AudienceSection';
 import { ToolsSection } from './components/ToolsSection';
 import { FinalCTA } from './components/FinalCTA';
@@ -14,9 +16,11 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <PracticalBuildsSection />
         <EcosystemCards />
         <PathSection />
         <AboutSection />
+        <ProofSection />
         <AudienceSection />
         <ToolsSection />
         <FinalCTA />

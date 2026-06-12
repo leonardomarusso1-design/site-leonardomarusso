@@ -19,7 +19,6 @@ export function Header() {
           Leonardo Marusso
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           <div className="flex items-center gap-6 text-sm font-medium text-brand-muted">
             {navLinks.map((link) => (
@@ -36,16 +35,15 @@ export function Header() {
           </a>
         </nav>
 
-        {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-brand-text p-2 -mr-2"
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -54,10 +52,10 @@ export function Header() {
             exit={{ opacity: 0, y: -10 }}
             className="md:hidden absolute top-20 left-0 w-full bg-brand-card border-b border-brand-border p-6 flex flex-col gap-6"
           >
-             {navLinks.map((link) => (
-              <a 
-                key={link.label} 
-                href={link.href} 
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="text-brand-text font-medium text-lg"
               >

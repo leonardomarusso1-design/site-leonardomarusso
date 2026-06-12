@@ -43,8 +43,8 @@ export function ToolsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {tools.map((tool, idx) => (
-            <a 
-              key={idx} 
+            <a
+              key={idx}
               href={tool.link}
               className="group block bg-brand-card p-8 rounded-[2rem] border border-brand-border hover:border-brand-accent/30 transition-colors"
             >
