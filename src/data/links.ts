@@ -2,7 +2,7 @@ export const links = {
   communityUrl: "#",
   kitUrl: "#",
   kitAccessUrl: "https://kit.leonardomarusso.com.br",
-  ebookAccessUrl: "/files/ebook-do-zero-a-primeira-oferta.pdf",
+  ebookAccessUrl: "#",
   ebookUrl: "https://leonardomarusso.com.br/ebook",
   ebookCheckoutUrl: "https://pay.kiwify.com.br/jO27Qu0",
   youtubeUrl: "#",
