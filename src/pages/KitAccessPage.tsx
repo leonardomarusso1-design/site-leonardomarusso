@@ -140,10 +140,10 @@ function ErrorState({ title, message }: { title: string; message: string }) {
         {message}
       </p>
       <a
-        href="/ebook"
+        href="/"
         className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-brand-bg text-brand-text border border-brand-border px-8 py-4 rounded-xl font-semibold hover:border-brand-accent/50 hover:text-brand-accent transition-colors"
       >
-        <ArrowLeft size={20} /> Voltar para o ebook
+        <ArrowLeft size={20} /> Voltar para o início
       </a>
     </>
   );
