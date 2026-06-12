@@ -35,7 +35,13 @@ export default async function handler(req: any, res: any) {
   const supabaseUrl = process.env.SUPABASE_URL;
   const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-  if (!supabaseUrl || !supabaseServiceRoleKey) {
+  if (!supabaseUrl) {
+    console.error('Missing SUPABASE_URL');
+    return res.status(500).json({ ok: false, error: 'Internal server error' });
+  }
+
+  if (!supabaseServiceRoleKey) {
+    console.error('Missing SUPABASE_SERVICE_ROLE_KEY');
     return res.status(500).json({ ok: false, error: 'Internal server error' });
   }
 
@@ -57,6 +63,7 @@ export default async function handler(req: any, res: any) {
   });
 
   if (error) {
+    console.error('Supabase insert error', error);
     return res.status(500).json({ ok: false, error: 'Internal server error' });
   }
 
