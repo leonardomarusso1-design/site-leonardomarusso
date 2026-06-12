@@ -1,5 +1,6 @@
 import { HomePage } from './pages/HomePage';
 import { EbookPage } from './pages/EbookPage';
+import { EbookAccessPage } from './pages/EbookAccessPage';
 import { EbookThankYouPage } from './pages/EbookThankYouPage';
 import { KitThankYouPage } from './pages/KitThankYouPage';
 
@@ -8,6 +9,10 @@ function resolvePage() {
 
   if (path === '/ebook') {
     return <EbookPage />;
+  }
+
+  if (path === '/acesso-ebook') {
+    return <EbookAccessPage />;
   }
 
   if (path === '/obrigado-ebook') {
