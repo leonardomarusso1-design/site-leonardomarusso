@@ -2,7 +2,7 @@ export const links = {
   communityUrl: "#",
   kitUrl: "https://kit.leonardomarusso.com.br",
   ebookAccessUrl: "#",
-  ebookUrl: "#",
+  ebookUrl: "https://leonardomarusso.com.br/ebook",
   ebookCheckoutUrl: "https://pay.kiwify.com.br/jO27Qu0",
   youtubeUrl: "#",
   instagramUrl: "#",
