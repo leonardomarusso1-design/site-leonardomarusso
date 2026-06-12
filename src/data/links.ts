@@ -3,7 +3,7 @@ export const links = {
   kitUrl: "https://kit.leonardomarusso.com.br",
   ebookAccessUrl: "#",
   ebookUrl: "#",
-  ebookCheckoutUrl: "#",
+  ebookCheckoutUrl: "https://pay.kiwify.com.br/jO27Qu0",
   youtubeUrl: "#",
   instagramUrl: "#",
   photosAppUrl: "#",
