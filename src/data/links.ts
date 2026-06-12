@@ -1,7 +1,7 @@
 export const links = {
   communityUrl: "#",
   kitUrl: "/kit",
-  kitCheckoutUrl: "#COLOCAR_LINK_CHECKOUT_KIT_AQUI",
+  kitCheckoutUrl: "https://pay.kiwify.com.br/DPHr8zs",
   kitAccessUrl: "https://kit.leonardomarusso.com.br",
   ebookAccessUrl: "#",
   ebookUrl: "https://leonardomarusso.com.br/ebook",
