@@ -7,16 +7,16 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Início', href: '#inicio' },
-    { label: 'Ecossistema', href: '#ecossistema' },
-    { label: 'Projetos', href: '#projetos' },
-    { label: 'Provas', href: '#provas' },
+    { label: 'Início', href: '/#inicio' },
+    { label: 'Ecossistema', href: '/#ecossistema' },
+    { label: 'Projetos', href: '/#projetos' },
+    { label: 'Provas', href: '/#provas' },
   ];
 
   return (
     <header className="fixed top-0 w-full z-50 bg-brand-bg/80 backdrop-blur-md border-b border-brand-border">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#inicio" className="text-xl font-bold tracking-tight text-brand-text cursor-pointer hover:text-brand-accent transition-colors">
+        <a href="/" className="text-xl font-bold tracking-tight text-brand-text cursor-pointer hover:text-brand-accent transition-colors">
           Leonardo Marusso
         </a>
 
